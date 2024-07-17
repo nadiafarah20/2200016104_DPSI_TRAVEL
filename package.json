@@ -1,0 +1,27 @@
+{
+  "name": "dpsi-uas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nadiafarah20/2200016104_DPSI_TRAVEL.git"
+  },
+  "author": "NADIA FARAH ADIBA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nadiafarah20/2200016104_DPSI_TRAVEL/issues"
+  },
+  "homepage": "https://github.com/nadiafarah20/2200016104_DPSI_TRAVEL#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.1",
+    "mongoose-sequence": "^6.0.1"
+  }
+}
