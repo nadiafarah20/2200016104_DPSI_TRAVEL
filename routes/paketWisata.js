@@ -7,7 +7,7 @@ const authorize = require('../middleware/authorize');
 router.get('/', paketWisataController.getAllPaketWisata);
 
 // Get PaketWisata by auto-increment ID
-router.get('/:id', authorize.verifyToken, paketWisataController.getPaketWisataByAutoIncrementId);
+router.get('/:id', paketWisataController.getPaketWisataByAutoIncrementId);
 
 // Create new PaketWisata
 router.post('/', authorize.verifyToken, authorize.isUser, paketWisataController.createPaketWisata);

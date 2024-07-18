@@ -64,29 +64,11 @@ exports.createReservasi = async (req, res) => {
 // Update Reservasi (Admin only)
 exports.updateReservasi = async (req, res) => {
     try {
-        const { id_pelanggan, id_paketWisata, tgl_keberangkatan, jumlah_orang, status_pembayaran } = req.body;
-
-        // Find pelanggan and paketWisata by auto-increment ID
-        const pelanggan = await Pelanggan.findOne({ pelanggan_id: id_pelanggan });
-        const paketWisata = await PaketWisata.findOne({ paketWisata_id: id_paketWisata });
-
-        if (!pelanggan) {
-            return res.status(404).json({ msg: 'Pelanggan not found' });
-        }
-        if (!paketWisata) {
-            return res.status(404).json({ msg: 'Paket Wisata not found' });
-        }
-
-        const filter = { reservasi_id: req.params.id };
-        const updateFields = {
-            id_pelanggan: pelanggan._id,
-            id_paketWisata: paketWisata._id,
-            tgl_keberangkatan,
-            jumlah_orang,
-            status_pembayaran
-        };
-
-        const reservasi = await Reservasi.findOneAndUpdate(filter, updateFields, { new: true });
+        const reservasi = await Reservasi.findOneAndUpdate(
+            { reservasi_id: req.params.id },
+            req.body,
+            { new: true }
+        );
         res.json(reservasi);
     } catch (err) {
         console.error(err.message);
@@ -94,16 +76,13 @@ exports.updateReservasi = async (req, res) => {
     }
 };
 
-
 // Delete Reservasi (Admin only)
 exports.deleteReservasi = async (req, res) => {
     try {
-        const filter = { reservasi_id: req.params.id };
-        await Reservasi.findOneAndDelete(filter);
+        await Reservasi.findOneAndDelete({ reservasi_id: req.params.id });
         res.json({ msg: 'Reservasi deleted' });
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server Error');
     }
 };
-
