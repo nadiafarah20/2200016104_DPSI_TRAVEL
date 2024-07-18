@@ -1,0 +1,1176 @@
+{
+	"info": {
+		"_postman_id": "ace7e5b6-4ef7-4cb2-bac6-a23b8cc38e92",
+		"name": "2200016104_DPSI_TRAVEL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35362744"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/api/pelanggan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama\":\"nadia \",\r\n    \"alamat\":\"jogja\",\r\n    \"kontak\":\"012345678\",\r\n    \"email\": \"nadia@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/pelanggan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pelanggan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/paketWisata",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyNmEzYmQ2ZTM0OGUyMDYwYTNhZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzIxMDU1MzU0LCJleHAiOjE3MjEwNTg5NTR9.XzJqnx-XfylhG5R7UzOSpnEQHBYKXCA1RwlInBw4cJE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama_destinasi\": \"Bromo\",\r\n    \"harga\": 4000000,\r\n    \"fasilitas\": \"Hotel, Breakfast, Tour Guide\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/paketWisata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"paketWisata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/metodePembayaran",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyNmEzYmQ2ZTM0OGUyMDYwYTNhZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzIxMTAxNzQyLCJleHAiOjE3MjExMDUzNDJ9.CBI7Ov0SjdZM4FLDYpv3_EEPlvqsYh6eSu0jaoWmRpA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama_metode\":\"credit card\",\r\n    \"provider\": \"visa\",\r\n    \"status\" : \"aktif\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/metodePembayaran",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"metodePembayaran"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/reservasi",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id_pelanggan\": \"6694e187df7e7de332a16cdc\",\r\n  \"id_paketWisata\": \"6694ea56d5e52dde12f056f7\",\r\n  \"tgl_keberangkatan\": \"2024-07-20\",\r\n  \"jumlah_orang\": 2,\r\n  \"status_pembayaran\": \"lunas\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/reservasi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservasi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/pembayaran",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id_reservasi\": \"6694e187df7e7de332a16cdc\",\r\n  \"id_metodePembayaran\": \"6694ea56d5e52dde12f056f7\",\r\n  \"nominal_pembayaran\": 1000000,\r\n  \"status_pembayaran\": \"lunas\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/pembayaran",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pembayaran"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/users/register",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyOWFiMTQ0ZTQ4ODViNzcwNDJiOSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTA5Nzk0NCwiZXhwIjoxNzIxMTAxNTQ0fQ.kofvIjSqejnmOZ74Htg9M3WSG-Hn8KQKeH4iclwTfPQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"username\":\"nadiaaa\", \r\n    \"password\":\"nadia123\", \r\n    \"role\":\"admin\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/users/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"username\":\"nadiaaa\", \r\n    \"password\":\"nadia123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/users/users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyOWFiMTQ0ZTQ4ODViNzcwNDJiOSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTE5MDExNywiZXhwIjoxNzIxMTkzNzE3fQ.-e7rKazBmU6tcG68TWKYRxA1Vw1PplrDdezPJnYOw8U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/users/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/pelanggan",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyNmEzYmQ2ZTM0OGUyMDYwYTNhZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzIxMTg3Nzg5LCJleHAiOjE3MjExOTEzODl9.WFG_0lyGQnAZWoyMNigRV8zVW6AH3jDMIG6biSFtDX8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama\":\"ratu amelia\",\r\n    \"alamat\":\"semarang\",\r\n    \"kontak\":\"123456780\",\r\n    \"email\": \"amelia@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/pelanggan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pelanggan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/pelanggan",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyOWFiMTQ0ZTQ4ODViNzcwNDJiOSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTE5MDExNywiZXhwIjoxNzIxMTkzNzE3fQ.-e7rKazBmU6tcG68TWKYRxA1Vw1PplrDdezPJnYOw8U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/pelanggan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pelanggan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/pelanggan/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyOWFiMTQ0ZTQ4ODViNzcwNDJiOSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTE5MDExNywiZXhwIjoxNzIxMTkzNzE3fQ.-e7rKazBmU6tcG68TWKYRxA1Vw1PplrDdezPJnYOw8U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/pelanggan/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pelanggan",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/pelanggan/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyOWFiMTQ0ZTQ4ODViNzcwNDJiOSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTE5MDExNywiZXhwIjoxNzIxMTkzNzE3fQ.-e7rKazBmU6tcG68TWKYRxA1Vw1PplrDdezPJnYOw8U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama\":\"nadia farah\",\r\n    \"alamat\":\"jogja\",\r\n    \"kontak\":\"012345678\",\r\n    \"email\": \"nadia@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/pelanggan/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pelanggan",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/pelanggan/3",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyOWFiMTQ0ZTQ4ODViNzcwNDJiOSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTE5MDExNywiZXhwIjoxNzIxMTkzNzE3fQ.-e7rKazBmU6tcG68TWKYRxA1Vw1PplrDdezPJnYOw8U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/pelanggan/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pelanggan",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/paketWisata",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyOWFiMTQ0ZTQ4ODViNzcwNDJiOSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTE5MDExNywiZXhwIjoxNzIxMTkzNzE3fQ.-e7rKazBmU6tcG68TWKYRxA1Vw1PplrDdezPJnYOw8U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama_destinasi\": \"Borobudur\",\r\n    \"deskripsi\": \"mahakarya arsitektur Buddha terbesar di dunia\",\r\n    \"harga\": 2500000,\r\n    \"fasilitas\": \"Hotel, Breakfast, Tour Guide\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/paketWisata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"paketWisata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/paketWisata",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyNmEzYmQ2ZTM0OGUyMDYwYTNhZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzIxMTg3Nzg5LCJleHAiOjE3MjExOTEzODl9.WFG_0lyGQnAZWoyMNigRV8zVW6AH3jDMIG6biSFtDX8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/paketWisata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"paketWisata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/paketWisata/5",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyOWFiMTQ0ZTQ4ODViNzcwNDJiOSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTE5MjMzNywiZXhwIjoxNzIxMTk1OTM3fQ.u3HwfWLfiZFyYPvG7nBZKm5xzNmt83SZ4HXz_0Z6xbo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/paketWisata/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"paketWisata",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/paketWisata/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyOWFiMTQ0ZTQ4ODViNzcwNDJiOSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTE5MjMzNywiZXhwIjoxNzIxMTk1OTM3fQ.u3HwfWLfiZFyYPvG7nBZKm5xzNmt83SZ4HXz_0Z6xbo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama_destinasi\": \"Bali\",\r\n    \"harga\": 5000000,\r\n    \"deskripsi\" : \"pulau yang sangat indah\",\r\n    \"fasilitas\": \"Hotel, Breakfast, Tour Guide\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/paketWisata/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"paketWisata",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/paketWisata/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyOWFiMTQ0ZTQ4ODViNzcwNDJiOSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTE5MjMzNywiZXhwIjoxNzIxMTk1OTM3fQ.u3HwfWLfiZFyYPvG7nBZKm5xzNmt83SZ4HXz_0Z6xbo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/paketWisata/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"paketWisata",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/metodePembayaran",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyNmEzYmQ2ZTM0OGUyMDYwYTNhZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzIxMTg3Nzg5LCJleHAiOjE3MjExOTEzODl9.WFG_0lyGQnAZWoyMNigRV8zVW6AH3jDMIG6biSFtDX8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama_metode\": \"Bank Transfer\",\r\n    \"provider\": \"BCA\",\r\n    \"status\": \"aktif\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/metodePembayaran",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"metodePembayaran"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/metodePembayaran",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyNmEzYmQ2ZTM0OGUyMDYwYTNhZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzIxMTg3Nzg5LCJleHAiOjE3MjExOTEzODl9.WFG_0lyGQnAZWoyMNigRV8zVW6AH3jDMIG6biSFtDX8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/metodePembayaran",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"metodePembayaran"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/metodePembayaran/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyNmEzYmQ2ZTM0OGUyMDYwYTNhZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzIxMTg3Nzg5LCJleHAiOjE3MjExOTEzODl9.WFG_0lyGQnAZWoyMNigRV8zVW6AH3jDMIG6biSFtDX8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/metodePembayaran/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"metodePembayaran",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/metodePembayaran/3",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyOWFiMTQ0ZTQ4ODViNzcwNDJiOSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTE5MjMzNywiZXhwIjoxNzIxMTk1OTM3fQ.u3HwfWLfiZFyYPvG7nBZKm5xzNmt83SZ4HXz_0Z6xbo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama_metode\": \"Bank Transfer\",\r\n    \"provider\": \"BNI\",\r\n    \"status\": \"aktif\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/metodePembayaran/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"metodePembayaran",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/metodePembayaran/3",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyOWFiMTQ0ZTQ4ODViNzcwNDJiOSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTE5MjMzNywiZXhwIjoxNzIxMTk1OTM3fQ.u3HwfWLfiZFyYPvG7nBZKm5xzNmt83SZ4HXz_0Z6xbo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/metodePembayaran/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"metodePembayaran",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/pembayaran",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyNmEzYmQ2ZTM0OGUyMDYwYTNhZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzIxMTg3Nzg5LCJleHAiOjE3MjExOTEzODl9.WFG_0lyGQnAZWoyMNigRV8zVW6AH3jDMIG6biSFtDX8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id_reservasi\": 1,\r\n  \"id_metodePembayaran\": 4,\r\n  \"nominal_pembayaran\": 3500000,\r\n  \"status_pembayaran\": \"lunas\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/pembayaran",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pembayaran"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/pembayaran",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyOWFiMTQ0ZTQ4ODViNzcwNDJiOSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTE5MjMzNywiZXhwIjoxNzIxMTk1OTM3fQ.u3HwfWLfiZFyYPvG7nBZKm5xzNmt83SZ4HXz_0Z6xbo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/pembayaran",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pembayaran"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/pembayaran/5",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyNmEzYmQ2ZTM0OGUyMDYwYTNhZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzIxMTg3Nzg5LCJleHAiOjE3MjExOTEzODl9.WFG_0lyGQnAZWoyMNigRV8zVW6AH3jDMIG6biSFtDX8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/pembayaran/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pembayaran",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/pembayaran/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyOWFiMTQ0ZTQ4ODViNzcwNDJiOSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTE5MjMzNywiZXhwIjoxNzIxMTk1OTM3fQ.u3HwfWLfiZFyYPvG7nBZKm5xzNmt83SZ4HXz_0Z6xbo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_reservasi\": null,\r\n    \"id_metodePembayaran\": null,\r\n    \"nominal_pembayaran\": 1500000,\r\n    \"status_pembayaran\": \"lunas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/pembayaran/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pembayaran",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/pembayaran/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyOWFiMTQ0ZTQ4ODViNzcwNDJiOSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTE5MjMzNywiZXhwIjoxNzIxMTk1OTM3fQ.u3HwfWLfiZFyYPvG7nBZKm5xzNmt83SZ4HXz_0Z6xbo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/pembayaran/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pembayaran",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/reservasi",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyNmEzYmQ2ZTM0OGUyMDYwYTNhZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzIxMTg3Nzg5LCJleHAiOjE3MjExOTEzODl9.WFG_0lyGQnAZWoyMNigRV8zVW6AH3jDMIG6biSFtDX8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"pelanggan_id\": \"3\",\r\n  \"paketWisata_id\": \"2\",\r\n  \"tgl_keberangkatan\": \"2024-05-28\",\r\n  \"jumlah_orang\": 3,\r\n  \"status_pembayaran\": \"lunas\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/reservasi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservasi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/reservasi",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyNmEzYmQ2ZTM0OGUyMDYwYTNhZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzIxMTg3Nzg5LCJleHAiOjE3MjExOTEzODl9.WFG_0lyGQnAZWoyMNigRV8zVW6AH3jDMIG6biSFtDX8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/reservasi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservasi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/reservasi/2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyNmEzYmQ2ZTM0OGUyMDYwYTNhZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzIxMTg3Nzg5LCJleHAiOjE3MjExOTEzODl9.WFG_0lyGQnAZWoyMNigRV8zVW6AH3jDMIG6biSFtDX8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/reservasi/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservasi",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/reservasi/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyOWFiMTQ0ZTQ4ODViNzcwNDJiOSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTE5MjMzNywiZXhwIjoxNzIxMTk1OTM3fQ.u3HwfWLfiZFyYPvG7nBZKm5xzNmt83SZ4HXz_0Z6xbo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_pelanggan\" : 2,\r\n    \"paketWisata_id\" : 3,\r\n    \"tgl_keberangkatan\": \"2024-07-20T00:00:00.000Z\",\r\n    \"jumlah_orang\": 3,\r\n    \"status_pembayaran\": \"lunas\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/reservasi/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservasi",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/reservasi/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTUyOWFiMTQ0ZTQ4ODViNzcwNDJiOSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTE5MjMzNywiZXhwIjoxNzIxMTk1OTM3fQ.u3HwfWLfiZFyYPvG7nBZKm5xzNmt83SZ4HXz_0Z6xbo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/reservasi/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservasi",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
