@@ -4,7 +4,7 @@ const paketWisataController = require('../controllers/paketWisataController');
 const authorize = require('../middleware/authorize');
 
 // Get all PaketWisata
-router.get('/', authorize.verifyToken, paketWisataController.getAllPaketWisata);
+router.get('/', paketWisataController.getAllPaketWisata);
 
 // Get PaketWisata by auto-increment ID
 router.get('/:id', authorize.verifyToken, paketWisataController.getPaketWisataByAutoIncrementId);
