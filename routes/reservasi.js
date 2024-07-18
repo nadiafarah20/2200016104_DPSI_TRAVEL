@@ -4,7 +4,7 @@ const reservasiController = require('../controllers/reservasiController');
 const authorize = require('../middleware/authorize');
 
 // Get all Reservasi (User and Admin)
-router.get('/', authorize.verifyToken, reservasiController.getAllReservasi);
+router.get('/', reservasiController.getAllReservasi);
 
 // Get Reservasi by auto-increment ID (User and Admin)
 router.get('/:id', authorize.verifyToken, reservasiController.getReservasiByAutoIncrementId);

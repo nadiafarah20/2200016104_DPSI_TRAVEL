@@ -4,7 +4,7 @@ const metodePembayaranController = require('../controllers/metodePembayaranContr
 const authorize = require('../middleware/authorize');
 
 // Get all MetodePembayaran (User and Admin)
-router.get('/', authorize.verifyToken, metodePembayaranController.getAllMetodePembayaran);
+router.get('/', metodePembayaranController.getAllMetodePembayaran);
 
 // Get MetodePembayaran by auto-increment ID (User and Admin)
 router.get('/:id', authorize.verifyToken, metodePembayaranController.getMetodePembayaranByAutoIncrementId);

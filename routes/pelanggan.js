@@ -4,7 +4,7 @@ const pelangganController = require('../controllers/pelangganController');
 const authorize = require('../middleware/authorize');
 
 // Get all Pelanggan (Admin only)
-router.get('/', authorize.verifyToken, authorize.isAdmin, pelangganController.getAllPelanggan);
+router.get('/', authorize.isAdmin, pelangganController.getAllPelanggan);
 
 // Get Pelanggan by auto-increment ID (User and Admin)
 router.get('/:id', authorize.verifyToken, pelangganController.getPelangganByAutoIncrementId);
